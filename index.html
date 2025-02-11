@@ -124,6 +124,7 @@
         let menu=document.querySelectorAll(".menu");
         let lastScroll= window.scrollY;
         let hidden=false;
+        let isTouch=false;
 
         hamburger.addEventListener("click",()=>{
             headerContent.classList.toggle("header-active")
@@ -135,15 +136,19 @@
             })
         });
 
+        function showBar(){
+             if(hidden){
+                header.classList.remove("header-hidden");
+                hidden=false;
+        }
+            
         //向下滾動時隱藏
         window.addEventListener("scroll",()=>{
             if(window.scrollY>lastScroll){
                 header.classList.add("header-hidden");
                 hidden=true;
             }else{
-                if(hidden){
-                header.classList.remove("header-hidden");
-                hidden=false;
+                showBar();
             }
             
             }
@@ -151,11 +156,16 @@
             lastScroll=window.scrollY;
         });
 
-        window.addEventListener("click",()=>{
-            if(hidden){
-                header.classList.remove("header-hidden")
-                hidden=false;
+        window.addEventListener("touchstart",()=>{
+                showBar();
             }
+            isTouch=true;
+        });
+        
+        window.addEventListener("click",()=>{
+            if(!isTouch){
+                showBar();
+            }   
         });
 
 
