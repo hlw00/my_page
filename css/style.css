@@ -419,7 +419,8 @@ footer {
     .header-active .btn-bottom {
         transform: rotate(-45deg) translateY(-2px);
     }
-
+    .logo{
+        font-size: 18px;}
 
 }
 
