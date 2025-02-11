@@ -136,12 +136,6 @@
             })
         });
 
-        function showBar(){
-             if(hidden){
-                header.classList.remove("header-hidden");
-                hidden=false;
-                 }
-        }
             
         //向下滾動時隱藏
         window.addEventListener("scroll",()=>{
@@ -149,20 +143,29 @@
                 header.classList.add("header-hidden");
                 hidden=true;
             }else{
-                showBar();
+                if(hidden){
+                header.classList.remove("header-hidden");
+                hidden=false;
+                 }
             }
             lastScroll=window.scrollY;
         });
 
         window.addEventListener("touchstart",()=>{
-                showBar();
+                if(hidden){
+                header.classList.remove("header-hidden");
+                hidden=false;
+                 }
             }
             isTouch=true;
         });
         
         window.addEventListener("click",()=>{
             if(!isTouch){
-                showBar();
+                if(hidden){
+                header.classList.remove("header-hidden");
+                hidden=false;
+                 }
             }   
         });
 
