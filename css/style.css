@@ -420,7 +420,23 @@ footer {
         transform: rotate(-45deg) translateY(-2px);
     }
     .logo{
-        font-size: 18px;}
+        font-size: 18px;
+    }
+    
+    .section-title{
+        dispaly:flex;
+        justify-content:center;
+    }
 
+    .primary-text{
+        display: flex;
+        text-align: center;
+        width: 180px;
+    }
+
+    .link-button {
+    display: flex;
+    justify-content: center;
+    }
 }
 
