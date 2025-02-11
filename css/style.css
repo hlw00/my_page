@@ -364,6 +364,7 @@ footer {
         align-content: flex-start;
         align-items: center;
         padding-bottom: 20px;
+        padding-top: 10px;
     }
 
     .header-active .header-nav {
